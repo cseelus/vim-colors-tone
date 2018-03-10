@@ -7,21 +7,21 @@
 " colors
 " --------------------------
 :let _white       = '#ebebff'
-:let _d_white     = '#bdbde8'
-:let _gray_light  = '#717090'
-:let _gray        = '#615f80'
-:let _gray_dark   = '#49515f'
+:let _d_white     = '#dbdbff'
+:let _pale_white  = '#dbdbff'
+:let _gray_light  = '#8383af'
+:let _gray        = '#616181'
+:let _gray_dark   = '#50506b'
 :let _semiblack   = '#222234'
 :let _black       = '#181827'
 
 :let _aubergine   = '#c59dc5'
 :let _turquoise   = '#1fffd2'
-:let _d_turquoise = '#228577'
+:let _d_turquoise = '#28a492'
 :let _l_sky       = '#9fd4ff'
 :let _sky         = '#6cbeff'
 :let _d_sky       = '#5f94bf'
-:let _orange      = '#fc929e'
-:let _sap         = '#fac863'
+:let _sap         = '#ebff00'
 
 set background=dark
 highlight clear
@@ -41,7 +41,8 @@ let colorgroup['Normal']       = {"GUIFG": _white,     "GUIBG":  _black}
 let colorgroup['Darker']       = {"GUIFG": _gray,      "GUIBG":  _black}
 let colorgroup['ColorColumn']  = {"GUIFG": _black, "GUIBG":  _aubergine}
 let colorgroup['Conceal']      = {"GUIFG": _sap,        "GUI": "bold"}
-" let colorgroup['Cursor']       = {"GUIFG": _black, "GUIBG":  _turquoise}
+let colorgroup['Cursor']       = {"GUIFG": _black, "GUIBG":  _turquoise}
+let colorgroup['iCursor']       = {"GUIFG": _black, "GUIBG":  _turquoise}
 let colorgroup['CursorLine']   = {"GUIFG": _white,     "GUIBG":  _semiblack}
 let colorgroup['CursorLineNr'] = {"GUIFG": _gray_dark, "GUIBG":  _black}
 let colorgroup['Directory']    = {"GUIFG": _turquoise,   "GUIBG":  _black}
@@ -54,7 +55,7 @@ if &background == "light"
 endif
 let colorgroup['MatchParen']   = {"GUIFG": _black, "GUIBG":  _aubergine}
 let colorgroup['ModeMsg']      = {"GUIFG": _black, "GUIBG":  _turquoise}
-let colorgroup['Pmenu']        = {"GUIFG": _white,     "GUIBG":  _semiblack}
+let colorgroup['Pmenu']        = {"GUIFG": _white,     "GUIBG":  _gray_dark}
 let colorgroup['PmenuSel']     = {"GUIFG": _black, "GUIBG":  _turquoise}
 let colorgroup['PmenuSbar']    = {                     "GUIBG":  _black}
 let colorgroup['Search']       = {                     "GUIBG":  _gray_dark, "GUI": "underline"}
@@ -62,7 +63,7 @@ let colorgroup['SignColumn']   = {                     "GUIBG":  _black}
 let colorgroup['StatusLine']   = {"GUIFG": _gray,      "GUIBG":  _semiblack}
 let colorgroup['StatusLineNC'] = {"GUIFG": _gray_dark, "GUIBG":  _semiblack}
 let colorgroup['Title']        = {"GUIFG": _turquoise, "GUI": "bold"}
-let colorgroup['Todo']         = {"GUIFG": _black, "GUIBG":  _sky}
+let colorgroup['Todo']         = {"GUIFG": _black, "GUIBG":  _sky, "GUI": "italic"}
 let colorgroup['VertSplit']    = {"GUIFG": _semiblack,      "GUIBG":  _semiblack}
 let colorgroup['Visual']       = {"GUIFG": _black, "GUIBG":  _sap}
 if &background == "light"
@@ -86,10 +87,10 @@ let colorgroup['WarningMsg']   = {"GUIFG": _black, "GUIBG":  _sky}
 " Special     A special symbol, usually used for special characters like "\n" in strings
 " Underlined  Text that should be underlined
 " Error       Text which contains a programming language error
-let colorgroup['Comment']      = {"GUIFG": _gray, "GUI": "italic"}
-let colorgroup['Constant']     = {"GUIFG": _aubergine}
-let colorgroup['Identifier']   = {"GUIFG": _turquoise}
-let colorgroup['Statement']    = {"GUIFG": _orange}
+let colorgroup['Comment']      = {"GUIFG": _gray_light, "GUI": "italic"}
+let colorgroup['Constant']     = {"GUIFG": _turquoise}
+let colorgroup['Identifier']   = {"GUIFG": _aubergine}
+let colorgroup['Statement']    = {"GUIFG": _l_sky}
 let colorgroup['PreProc']      = {"GUIFG": _d_white}
 let colorgroup['Type']         = {"GUIFG": _d_white}
 let colorgroup['Special']      = {"GUIFG": _sap}
@@ -103,14 +104,12 @@ let colorgroup['Function']     = {"GUIFG": _sky}
 let colorgroup['Label']        = {"GUIFG": _d_turquoise}
 let colorgroup['Module']       = {"GUIFG": _aubergine, "GUI": "underline"}
 let colorgroup['NonText']      = {"GUIFG": _gray_dark}
-let colorgroup['SpecialKey']   = {"GUIFG": _gray_light}
 let colorgroup['String']       = {"GUIFG": _turquoise}
 let colorgroup['Structure']    = {"GUIFG": _gray}
-let colorgroup['Tag']          = {"GUIFG": _l_sky}
 " ------------------------
 hi link Boolean               Number
 hi link Character             Function
-hi link Class                 Identifier
+hi link Class                 Constant
 hi link ErrorMsg              Error
 hi link Delimiter             Define
 hi link Debug                 Special
@@ -125,8 +124,10 @@ hi link PreCondit             PreProc
 hi link Repeat                Statement
 hi link SpecialChar           Special
 hi link SpecialComment        Special
-hi link StorageClass          Constant
+hi link SpecialKey            Define
+hi link StorageClass          Identifier
 hi link Symbol                PreProc
+hi link Tag                   Statement
 hi link Typedef               Type
 
 
@@ -150,19 +151,22 @@ hi link GitGutterDelete       Darker
 hi link GitGutterChangeDelete Darker
 
 " NERDtree
-hi link NerdTreeCWD           Statement
+hi link NerdTreeCWD           Function
 hi link NerdTreeHelpKey       Function
 hi link NerdTreeHelpTitle     Statement
-hi link NerdTreeOpenable      Statement
+hi link NerdTreeOpenable      NerdTreeCWD
 hi link NerdTreeClosable      Statement
 hi link NerdTreeDir           Normal
-hi link NerdTreeDirSlash      Statement
+hi link NerdTreeDirSlash      NerdTreeDir
 
 " PlainTasks (.todo)
 hi link ptCompleteTask        Number
 hi link ptContext             Type
 hi link ptSection             Title
 hi link ptTask                Normal
+
+" VimPlug
+hi link plugName              Function
 
 " Startify
 hi link StartifyNumber        Function
@@ -192,16 +196,23 @@ hi link coffeeParen           Function
 " CSS
 hi link cssAttr               String
 hi link cssColor              Normal
-hi link cssClassName          Function
-hi link cssIdentifier         Function
+hi link cssClassName          PreProc
+hi link cssIdentifier         cssIdentifier
 hi link cssProp               Define
+hi link cssPseudoClass        Identifier
+hi link cssPseudoClassId      cssPseudoClass
 hi link cssSelectorOp         Identifier
+hi link cssTagName            Tag
+
+" GraphQL
+hi link graphqlName           Function
 
 " HAML
 hi link hamlTag               Function
 
 " HTML
-hi link htmlArg               Statement
+" hi link htmlArg               Statement
+hi link javaScript            Normal
 hi link htmlTag               Delimiter
 hi link htmlEndTag            Delimiter
 hi link htmlTagName           Tag
@@ -225,21 +236,28 @@ hi link jsClassDefinition     Class
 hi link jsClassFuncName       Function
 hi link jsClassKeyword        Label
 hi link jsDecorator           Normal
-hi link jsExport              Statement
+hi link jsExtendsKeyword      jsClassKeyword
+" hi link jsExport              Statement
 " hi link jsImport              Include
 hi link jsFrom                jsImport
 " hi link jsFuncBraces          Delimiter
 hi link jsFuncCall            Function
 hi link jsFuncParens          Delimiter
 hi link jsGlobalObjects       Identifier
+hi link jsGlobalNodeObjects   Identifier
 hi link jsModuleKeyword       Tag
 hi link jsNoise               Delimiter
 hi link jsObjectBraces        Delimiter
 hi link jsParens              Delimiter
+hi link jsReturn              Identifier
+hi link jsSpreadOperator      Function
 hi link jsThis                Identifier
 
 " JSON
-hi link jsonKeyword           Function
+hi link jsonKeyword           Normal
+hi link jsonKeywordMatch      Delimiter
+hi link jsonNoise             Delimiter
+hi link jsonQuote             Delimiter
 
 " LaTeX
 hi link texInputFile          PreProc
@@ -260,7 +278,7 @@ hi link texTypeStyle          Symbol
 hi link mkdBlockquote         Symbol
 hi link mkdCode               Identifier
 hi link mkdIndentCode         Identifier
-" hi link mkdLink               Normal
+hi link mkdLineBreak          Statement
 
 " MatchTagAlways
 hi link MatchTag              Identifier
@@ -279,12 +297,13 @@ hi link rubyControl           Statement
 hi link rubyConstant          Constant
 hi link rubyEntity            Function
 hi link rubyInclude           Include
-hi link rubyInterpolation     Include
+hi link rubyInterpolation     Identifier
 hi link rubyMacro             Function
 hi link rubyModule            Module
 " hi link RubyPseudoVariable    Type
 hi link rubyStringDelimiter   rubyString
 hi link rubySymbol            Symbol
+hi link rubyRoute             Type
 
 " SASS
 hi link sassClassChar         Function
@@ -295,10 +314,10 @@ hi link sassProperty          CSSProp
 
 " Slim
 hi link slimBegin             Normal
-hi link slimClass             Function
-hi link slimClassChar         Function
-hi link slimId                Function
-hi link slimIdChar            Function
+hi link slimClass             Type
+hi link slimClassChar         Type
+hi link slimId                Type
+hi link slimIdChar            Type
 hi link rubyKeyword           PreProc
 hi link slimText              Normal
 
@@ -306,8 +325,10 @@ hi link slimText              Normal
 hi link vimCmdSep             Function
 
 " YAML
-hi link yamlBlockMappingKey   Function
+hi link yamlBlockMappingKey   Normal
 hi link yamlDocumentStart     Comment
+hi link yamlKeyValueDelimiter Delimiter
+hi link yamlPlainScalar       Function
 
 " XML
 " hi link xmlAttrib             Normal
