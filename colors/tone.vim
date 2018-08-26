@@ -7,11 +7,12 @@
 " colors
 " --------------------------
 :let _white       = '#ebebff'
-:let _d_white     = '#dbdbff'
+:let _d_white     = '#bdbde8'
 :let _pale_white  = '#dbdbff'
 :let _gray_light  = '#8383af'
 :let _gray        = '#616181'
 :let _gray_dark   = '#50506b'
+:let _lightblack  = '#3a3a58'
 :let _semiblack   = '#222234'
 :let _black       = '#181827'
 
@@ -49,11 +50,11 @@ let colorgroup['Directory']    = {"GUIFG": _turquoise,   "GUIBG":  _black}
 let colorgroup['ErrorMsg']     = {"GUIFG": _black, "GUIBG":  _aubergine}
 let colorgroup['FoldColumn']   = {                     "GUIBG":  _black}
 let colorgroup['Folded']       = {"GUIFG": _white,     "GUIBG":  _semiblack}
-let colorgroup['LineNr']       = {"GUIFG": _gray_dark, "GUIBG":  _black}
+let colorgroup['LineNr']       = {"GUIFG": _lightblack, "GUIBG":  _black}
 if &background == "light"
   let colorgroup['LineNr']       = {"GUIFG": _gray, "GUIBG":  _black}
 endif
-let colorgroup['MatchParen']   = {"GUIFG": _black, "GUIBG":  _aubergine}
+let colorgroup['MatchParen']   = {"GUIFG": _black, "GUIBG":  _white}
 let colorgroup['ModeMsg']      = {"GUIFG": _black, "GUIBG":  _turquoise}
 let colorgroup['Pmenu']        = {"GUIFG": _white,     "GUIBG":  _gray_dark}
 let colorgroup['PmenuSel']     = {"GUIFG": _black, "GUIBG":  _turquoise}
@@ -88,7 +89,7 @@ let colorgroup['WarningMsg']   = {"GUIFG": _black, "GUIBG":  _sky}
 " Underlined  Text that should be underlined
 " Error       Text which contains a programming language error
 let colorgroup['Comment']      = {"GUIFG": _gray_light, "GUI": "italic"}
-let colorgroup['Constant']     = {"GUIFG": _turquoise}
+let colorgroup['Constant']     = {"GUIFG": _turquoise, "GUI": "bold"}
 let colorgroup['Identifier']   = {"GUIFG": _aubergine}
 let colorgroup['Statement']    = {"GUIFG": _l_sky}
 let colorgroup['PreProc']      = {"GUIFG": _d_white}
@@ -106,6 +107,8 @@ let colorgroup['Module']       = {"GUIFG": _aubergine, "GUI": "underline"}
 let colorgroup['NonText']      = {"GUIFG": _gray_dark}
 let colorgroup['String']       = {"GUIFG": _turquoise}
 let colorgroup['Structure']    = {"GUIFG": _gray}
+" Own highlighting groups
+let colorgroup['UnderlinedBold']   = {"GUIFG": _turquoise, "GUI": "underline,bold"}
 " ------------------------
 hi link Boolean               Number
 hi link Character             Function
@@ -197,7 +200,6 @@ hi link coffeeParen           Function
 hi link cssAttr               String
 hi link cssColor              Normal
 hi link cssClassName          PreProc
-hi link cssIdentifier         cssIdentifier
 hi link cssProp               Define
 hi link cssPseudoClass        Identifier
 hi link cssPseudoClassId      cssPseudoClass
@@ -242,12 +244,17 @@ hi link jsExtendsKeyword      jsClassKeyword
 hi link jsFrom                jsImport
 " hi link jsFuncBraces          Delimiter
 hi link jsFuncCall            Function
+hi link jsFuncBraces          Delimiter
 hi link jsFuncParens          Delimiter
+hi link jsFunctionKey         Function
 hi link jsGlobalObjects       Identifier
 hi link jsGlobalNodeObjects   Identifier
+hi link jsIfElseBraces        Delimiter
 hi link jsModuleKeyword       Tag
 hi link jsNoise               Delimiter
 hi link jsObjectBraces        Delimiter
+hi link jsObjectKey           Define
+hi link jsObjectValue         PreProc
 hi link jsParens              Delimiter
 hi link jsReturn              Identifier
 hi link jsSpreadOperator      Function
@@ -276,7 +283,7 @@ hi link texTypeStyle          Symbol
 
 " Markdown
 hi link mkdBlockquote         Symbol
-hi link mkdCode               Identifier
+hi link mkdCode               Function
 hi link mkdIndentCode         Identifier
 hi link mkdLineBreak          Statement
 
@@ -292,7 +299,7 @@ hi link phpVarSelector        Identifier
 hi link rubyAccess            Access
 hi link rubyCallback          Normal
 hi link rubyClass             Label
-hi link rubyClassName         Class
+hi link rubyClassName         UnderlinedBold
 hi link rubyControl           Statement
 hi link rubyConstant          Constant
 hi link rubyEntity            Function
@@ -314,10 +321,10 @@ hi link sassProperty          CSSProp
 
 " Slim
 hi link slimBegin             Normal
-hi link slimClass             Type
-hi link slimClassChar         Type
-hi link slimId                Type
-hi link slimIdChar            Type
+hi link slimClass             Function
+hi link slimClassChar         Function
+hi link slimId                Function
+hi link slimIdChar            Function
 hi link rubyKeyword           PreProc
 hi link slimText              Normal
 
