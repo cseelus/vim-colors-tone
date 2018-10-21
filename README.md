@@ -2,13 +2,13 @@
 
 Using a reduced number of bright and clear colors.
 
-![Tone preview Ruby](https://raw.github.com/cseelus/vim-colors-tone/master/vim-colors-tone-ruby-preview.png)  
+![Tone preview Ruby](http://stuff.imeos.org/persistent/github/vim-colors-tone/vim-colors-tone-ruby-preview.png)  
 *Screenshot with some Ruby sample code and the Roboto Mono Font*
 
-![Tone preview JavaScript](https://raw.github.com/cseelus/vim-colors-tone/master/vim-colors-tone-javascript-preview.png)  
+![Tone preview JavaScript](http://stuff.imeos.org/persistent/github/vim-colors-tone/vim-colors-tone-javascript-preview.png)  
 *Screenshot with some JavaScript sample code and the Roboto Mono Font*
 
-![Tone preview C](https://raw.github.com/cseelus/vim-colors-tone/master/vim-colors-tone-c-preview.png)  
+![Tone preview C](http://stuff.imeos.org/persistent/github/vim-colors-tone/vim-colors-tone-c-preview.png)  
 *Screenshot with some C sample code and the Roboto Mono Font*
 
 ## Highlightings for these plugins
