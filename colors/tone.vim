@@ -20,7 +20,6 @@
 :let _d_turquoise = '#28a492'
 :let _l_sky       = '#9fd4ff'
 :let _sky         = '#6cbeff'
-:let _d_sky       = '#5f94bf'
 :let _sap         = '#ebff00'
 
 set background=dark
@@ -231,12 +230,14 @@ hi link javascriptEndcolons   Character
 " Javascript (pangloss/vim-javascript)
 hi link jsArrowFuncArgs       Identifier
 hi link jsArrowFunction       Character
+hi link jsBraces              PreProc
 hi link jsBrackets            Delimiter
-" hi link jsBraces              Delimiter
+hi link jsClassBraces         PreProc
 hi link jsClassDefinition     Class
 hi link jsClassFuncName       Function
 hi link jsClassKeyword        Label
 hi link jsDecorator           Normal
+hi link jsDestructuringBraces PreProc
 hi link jsExtendsKeyword      jsClassKeyword
 " hi link jsExport              Statement
 " hi link jsImport              Include
@@ -249,9 +250,10 @@ hi link jsFunctionKey         Function
 hi link jsGlobalObjects       Identifier
 hi link jsGlobalNodeObjects   Identifier
 hi link jsIfElseBraces        Delimiter
+hi link jsModuleBraces        Normal
 hi link jsModuleKeyword       Tag
 hi link jsNoise               Delimiter
-hi link jsObjectBraces        Delimiter
+hi link jsObjectBraces        PreProc
 hi link jsObjectKey           Define
 hi link jsObjectValue         PreProc
 hi link jsParens              Delimiter
@@ -296,6 +298,7 @@ hi link phpVarSelector        Identifier
 
 " Ruby
 hi link rubyAccess            Access
+hi link rubyBlockParameterList PreProc
 hi link rubyCallback          Normal
 hi link rubyClass             Label
 hi link rubyClassName         UnderlinedBold
