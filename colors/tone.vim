@@ -8,7 +8,6 @@
 " --------------------------
 :let _white       = '#ebebff'
 :let _d_white     = '#bdbde8'
-:let _pale_white  = '#dbdbff'
 :let _gray_light  = '#8383af'
 :let _gray        = '#616181'
 :let _gray_dark   = '#50506b'
@@ -100,8 +99,9 @@ let colorgroup['Error']        = {"GUIFG": _black, "GUIBG": _aubergine}
 
 " Other highlighting groups
 let colorgroup['Access']       = {"GUIFG": _turquoise, "GUI": "bold"}
+let colorgroup['Character']     = {"GUIFG": _sky}
 let colorgroup['Define']       = {"GUIFG": _gray_light}
-let colorgroup['Function']     = {"GUIFG": _sky}
+let colorgroup['Function']     = {"GUIFG": _sky, "GUI": "bold"}
 let colorgroup['Label']        = {"GUIFG": _d_turquoise}
 let colorgroup['Module']       = {"GUIFG": _aubergine, "GUI": "underline"}
 let colorgroup['NonText']      = {"GUIFG": _gray_dark}
@@ -111,7 +111,6 @@ let colorgroup['Structure']    = {"GUIFG": _gray}
 let colorgroup['UnderlinedBold']   = {"GUIFG": _turquoise, "GUI": "underline,bold"}
 " ------------------------
 hi link Boolean               Number
-hi link Character             Function
 hi link Class                 Constant
 hi link ErrorMsg              Error
 hi link Delimiter             Define
@@ -121,7 +120,7 @@ hi link Exception             PreProc
 hi link Float                 Number
 hi link Include               PreProc
 hi link Macro                 PreProc
-hi link Number                Function
+hi link Number                Character
 hi link Operator              PreProc
 hi link PreCondit             PreProc
 hi link Repeat                Statement
@@ -138,7 +137,7 @@ hi link Typedef               Type
 " ----------------------------------------------------------------------
 
 " CtrlP
-hi link CtrlPMatch            Function
+hi link CtrlPMatch             Character
 
 " Git commit
 hi link gitcommitBranch        Constant
@@ -154,8 +153,8 @@ hi link GitGutterDelete       Darker
 hi link GitGutterChangeDelete Darker
 
 " NERDtree
-hi link NerdTreeCWD           Function
-hi link NerdTreeHelpKey       Function
+hi link NerdTreeCWD           Character
+hi link NerdTreeHelpKey       Character
 hi link NerdTreeHelpTitle     Statement
 hi link NerdTreeOpenable      NerdTreeCWD
 hi link NerdTreeClosable      Statement
@@ -169,10 +168,10 @@ hi link ptSection             Title
 hi link ptTask                Normal
 
 " VimPlug
-hi link plugName              Function
+hi link plugName              Character
 
 " Startify
-hi link StartifyNumber        Function
+hi link StartifyNumber        Character
 hi link StartifyBracket       StartifyNumber
 hi link StartifySection       Title
 hi link StartifyPath          Define
@@ -191,10 +190,10 @@ hi link ALEWarningSign        Special
 hi link apacheDeclaration     PreProc
 
 " CoffeeScript
-hi link coffeeExtendedOp      Function
+hi link coffeeExtendedOp      Character
 hi link coffeeObject          Statement
-hi link coffeeObjAssign       Function
-hi link coffeeParen           Function
+hi link coffeeObjAssign       Character
+hi link coffeeParen           Character
 
 " CSS
 hi link cssAttr               String
@@ -210,7 +209,7 @@ hi link cssTagName            Tag
 hi link graphqlName           Function
 
 " HAML
-hi link hamlTag               Function
+hi link hamlTag               Character
 
 " HTML
 " hi link htmlArg               Statement
@@ -221,17 +220,17 @@ hi link htmlTagName           Tag
 " hi link htmlEndTag            Function
 
 " JavaScript
-hi link javascriptFuncArg     Function
-hi link javascriptFuncComma   Function
+hi link javascriptFuncArg     Character
+hi link javascriptFuncComma   Character
 hi link javascriptFuncDef     Statement
 hi link javascriptFuncKeyword Statement
 hi link javascriptOpSymbols   Type
-hi link javascriptParens      Function
-hi link javascriptEndcolons   Function
+hi link javascriptParens      Character
+hi link javascriptEndcolons   Character
 
 " Javascript (pangloss/vim-javascript)
 hi link jsArrowFuncArgs       Identifier
-hi link jsArrowFunction       Normal
+hi link jsArrowFunction       Character
 hi link jsBrackets            Delimiter
 " hi link jsBraces              Delimiter
 hi link jsClassDefinition     Class
@@ -243,7 +242,7 @@ hi link jsExtendsKeyword      jsClassKeyword
 " hi link jsImport              Include
 hi link jsFrom                jsImport
 " hi link jsFuncBraces          Delimiter
-hi link jsFuncCall            Function
+hi link jsFuncCall            Character
 hi link jsFuncBraces          Delimiter
 hi link jsFuncParens          Delimiter
 hi link jsFunctionKey         Function
@@ -257,7 +256,7 @@ hi link jsObjectKey           Define
 hi link jsObjectValue         PreProc
 hi link jsParens              Delimiter
 hi link jsReturn              Identifier
-hi link jsSpreadOperator      Function
+hi link jsSpreadOperator      Character
 hi link jsThis                Identifier
 
 " JSON
@@ -269,21 +268,21 @@ hi link jsonQuote             Delimiter
 " LaTeX
 hi link texInputFile          PreProc
 hi link texDocType            Constant
-hi link texDocTypeArgs        Function
+hi link texDocTypeArgs        Character
 hi link texInputFile          Symbol
 hi link texInputFileOpt       String
 hi link texMathMatcher        Statement
 hi link texMathSymbol         Symbol
 hi link texMathZoneX          Symbol
 hi link texSection            Title
-hi link texStatement          Function
+hi link texStatement          Character
 hi link texTypeSize           Symbol
 hi link texTypeStyle          Symbol
 " hi link texSpecialChar        Special
 
 " Markdown
 hi link mkdBlockquote         Symbol
-hi link mkdCode               Function
+hi link mkdCode               Character
 hi link mkdIndentCode         Identifier
 hi link mkdLineBreak          Statement
 
@@ -302,40 +301,39 @@ hi link rubyClass             Label
 hi link rubyClassName         UnderlinedBold
 hi link rubyControl           Statement
 hi link rubyConstant          Constant
-hi link rubyEntity            Function
+hi link rubyEntity            Character
 hi link rubyInclude           Include
 hi link rubyInterpolation     Identifier
-hi link rubyMacro             Function
+hi link rubyMacro             Character
 hi link rubyModule            Module
-" hi link RubyPseudoVariable    Type
 hi link rubyStringDelimiter   rubyString
 hi link rubySymbol            Symbol
 hi link rubyRoute             Type
 
 " SASS
-hi link sassClassChar         Function
-hi link sassClass             Function
-hi link sassIdChar            Function
-hi link sassId                Function
+hi link sassClassChar         Character
+hi link sassClass             Character
+hi link sassIdChar            Character
+hi link sassId                Character
 hi link sassProperty          CSSProp
 
 " Slim
 hi link slimBegin             Normal
-hi link slimClass             Function
-hi link slimClassChar         Function
-hi link slimId                Function
-hi link slimIdChar            Function
+hi link slimClass             Character
+hi link slimClassChar         Character
+hi link slimId                Character
+hi link slimIdChar            Character
 hi link rubyKeyword           PreProc
 hi link slimText              Normal
 
 " VimL
-hi link vimCmdSep             Function
+hi link vimCmdSep             Character
 
 " YAML
 hi link yamlBlockMappingKey   Normal
 hi link yamlDocumentStart     Comment
 hi link yamlKeyValueDelimiter Delimiter
-hi link yamlPlainScalar       Function
+hi link yamlPlainScalar       Character
 
 " XML
 " hi link xmlAttrib             Normal

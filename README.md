@@ -1,8 +1,6 @@
 # Vim color scheme Tone
 
-Just another color scheme for VIM.
-
-Colors similar to [tone-syntax](https://atom.io/themes/tone-syntax) for Atom, but with some own shades and more contrast.
+Using a reduced number of bright and clear colors.
 
 ![Tone preview Ruby](https://raw.github.com/cseelus/vim-colors-tone/master/vim-colors-tone-ruby-preview.png)  
 *Screenshot with some Ruby sample code and the Roboto Mono Font*
