@@ -329,6 +329,29 @@ hi link slimIdChar            Character
 hi link rubyKeyword           PreProc
 hi link slimText              Normal
 
+" TypeScript
+hi link typescriptBOM                 Normal
+hi link typescriptBraces              Delimiter
+hi link typescriptCall                Define
+hi link typescriptClassExtends        Label
+hi link typescriptClassHeritage       Constant
+hi link typescriptClassKeyword        Label
+hi link typescriptClassName           Constant
+hi link typescriptDefault             Identifier
+hi link typescriptExport              PreProc
+hi link typescriptIdentifier          Identifier
+hi link typescriptIdentifierName      Character
+hi link typescriptImport              PreProc
+hi link typescriptMember              Define
+hi link typescriptObjectKey           Define
+hi link typescriptObjectLabel         Define
+hi link typescriptParens              Delimiter
+hi link typescriptParenExp            Delimiter
+hi link typescriptProp                PreProc
+hi link typescriptReserved            PreProc
+hi link typescriptTypeReference       Define
+hi link tsxTagName                    Statement
+
 " VimL
 hi link vimCmdSep             Character
 

@@ -1,6 +1,6 @@
 # Vim color scheme Tone
 
-Using a reduced number of bright and clear colors.
+Modest color scheme with a reduced number of bright and clear colors.
 
 ![Tone preview Ruby](http://stuff.imeos.org/persistent/github/vim-colors-tone/vim-colors-tone-ruby-preview.png)  
 *Screenshot with some Ruby sample code and the Roboto Mono Font*
@@ -30,7 +30,7 @@ Using a reduced number of bright and clear colors.
 - Git
 - Haml
 - HTML
-- JavaScript w. or w/o pangloss/vim-javascript
+- JavaScript (best with pangloss/vim-javascript)
 - Json
 - LaTeX
 - Markdown
@@ -38,6 +38,7 @@ Using a reduced number of bright and clear colors.
 - Ruby
 - Sass
 - Slim
+- TypeScript (best with HerringtonDarkholme/yats.vim)
 - VimL
 - YAML
 - XML
