@@ -299,7 +299,7 @@ hi link phpVarSelector        Identifier
 " Ruby
 hi link rubyAccess            Access
 hi link rubyBlockParameterList PreProc
-hi link rubyCallback          Normal
+hi link rubyCallback          Character
 hi link rubyClass             Label
 hi link rubyClassName         UnderlinedBold
 hi link rubyControl           Statement
