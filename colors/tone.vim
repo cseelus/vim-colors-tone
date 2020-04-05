@@ -54,7 +54,7 @@ if &background == "light"
 endif
 let colorgroup['MatchParen']   = {"GUIFG": _black, "GUIBG":  _white}
 let colorgroup['ModeMsg']      = {"GUIFG": _black, "GUIBG":  _turquoise}
-let colorgroup['Pmenu']        = {"GUIFG": _white,     "GUIBG":  _gray_dark}
+let colorgroup['Pmenu']        = {"GUIFG": _white,     "GUIBG":  _semiblack}
 let colorgroup['PmenuSel']     = {"GUIFG": _black, "GUIBG":  _turquoise}
 let colorgroup['PmenuSbar']    = {                     "GUIBG":  _black}
 let colorgroup['Search']       = {                     "GUIBG":  _gray_dark, "GUI": "underline"}
@@ -62,7 +62,7 @@ let colorgroup['SignColumn']   = {                     "GUIBG":  _black}
 let colorgroup['StatusLine']   = {"GUIFG": _gray,      "GUIBG":  _semiblack}
 let colorgroup['StatusLineNC'] = {"GUIFG": _gray_dark, "GUIBG":  _semiblack}
 let colorgroup['Title']        = {"GUIFG": _turquoise, "GUI": "bold"}
-let colorgroup['Todo']         = {"GUIFG": _black, "GUIBG":  _sky, "GUI": "italic"}
+let colorgroup['Todo']         = {"GUIFG": _black, "GUIBG":  _sky, "GUI": "bolditalic"}
 let colorgroup['VertSplit']    = {"GUIFG": _semiblack,      "GUIBG":  _semiblack}
 let colorgroup['Visual']       = {"GUIFG": _black, "GUIBG":  _sap}
 if &background == "light"
@@ -86,7 +86,7 @@ let colorgroup['WarningMsg']   = {"GUIFG": _black, "GUIBG":  _sky}
 " Special     A special symbol, usually used for special characters like "\n" in strings
 " Underlined  Text that should be underlined
 " Error       Text which contains a programming language error
-let colorgroup['Comment']      = {"GUIFG": _gray_light, "GUI": "italic"}
+let colorgroup['Comment']      = {"GUIFG": _gray, "GUI": "italic"}
 let colorgroup['Constant']     = {"GUIFG": _turquoise, "GUI": "bold"}
 let colorgroup['Identifier']   = {"GUIFG": _aubergine}
 let colorgroup['Statement']    = {"GUIFG": _l_sky}
@@ -253,13 +253,17 @@ hi link jsIfElseBraces        Delimiter
 hi link jsModuleBraces        Normal
 hi link jsModuleKeyword       Tag
 hi link jsNoise               Delimiter
-hi link jsObjectBraces        PreProc
+hi link jsObjectBraces        Delimiter
 hi link jsObjectKey           Define
 hi link jsObjectValue         PreProc
 hi link jsParens              Delimiter
 hi link jsReturn              Identifier
 hi link jsSpreadOperator      Character
+hi link jsSwitchBraces        Delimiter
 hi link jsThis                Identifier
+
+" JSX
+hi link jsxTagName            htmlTagName
 
 " JSON
 hi link jsonKeyword           Normal
