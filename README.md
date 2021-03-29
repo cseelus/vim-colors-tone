@@ -46,3 +46,11 @@ Modest color scheme with a reduced number of bright and clear colors.
 ## Ancient Terminals
 
 You can use a plugin like [CSApprox](http://www.vim.org/scripts/script.php?script_id=2390) to make this work smoothly in older 256 colors or even 88 colors terminals.
+
+## User screenshots
+
+![](https://user-images.githubusercontent.com/24765272/112863983-fd840700-90e9-11eb-81be-93e0d8a99224.jpeg)  
+*Screenshot by [@nyngwang](https://github.com/nyngwang)*
+
+![](https://user-images.githubusercontent.com/24765272/112864121-1e4c5c80-90ea-11eb-8ccf-247eceb8de27.jpeg)  
+*Screenshot by [@nyngwang](https://github.com/nyngwang)*
