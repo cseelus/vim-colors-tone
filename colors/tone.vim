@@ -14,6 +14,9 @@
 :let _lightblack  = '#3a3a58'
 :let _semiblack   = '#222234'
 :let _black       = '#181827'
+" saturated, blueish 'black'
+" :let _semiblack   = '#171e40'
+" :let _black       = '#0f1533'
 
 :let _aubergine   = '#c59dc5'
 :let _turquoise   = '#1fffd2'
@@ -48,7 +51,7 @@ let colorgroup['Directory']    = {"GUIFG": _turquoise,   "GUIBG":  _black}
 let colorgroup['ErrorMsg']     = {"GUIFG": _black, "GUIBG":  _aubergine}
 let colorgroup['FoldColumn']   = {                     "GUIBG":  _black}
 let colorgroup['Folded']       = {"GUIFG": _white,     "GUIBG":  _semiblack}
-let colorgroup['LineNr']       = {"GUIFG": _lightblack, "GUIBG":  _black}
+let colorgroup['LineNr']       = {"GUIFG": _gray, "GUIBG":  _black}
 if &background == "light"
   let colorgroup['LineNr']       = {"GUIFG": _gray, "GUIBG":  _black}
 endif
@@ -86,7 +89,7 @@ let colorgroup['WarningMsg']   = {"GUIFG": _black, "GUIBG":  _sky}
 " Special     A special symbol, usually used for special characters like "\n" in strings
 " Underlined  Text that should be underlined
 " Error       Text which contains a programming language error
-let colorgroup['Comment']      = {"GUIFG": _gray, "GUI": "italic"}
+let colorgroup['Comment']      = {"GUIFG": _gray_light, "GUI": "italic"}
 let colorgroup['Constant']     = {"GUIFG": _turquoise, "GUI": "bold"}
 let colorgroup['Identifier']   = {"GUIFG": _aubergine}
 let colorgroup['Statement']    = {"GUIFG": _l_sky}
@@ -98,11 +101,15 @@ let colorgroup['Error']        = {"GUIFG": _black, "GUIBG": _aubergine}
 
 " Other highlighting groups
 let colorgroup['Access']       = {"GUIFG": _turquoise, "GUI": "bold"}
-let colorgroup['Character']     = {"GUIFG": _sky}
+let colorgroup['Character']    = {"GUIFG": _sky}
 let colorgroup['Define']       = {"GUIFG": _gray_light}
+" let colorgroup['DiffAdd']      = {"GUIBG": _d_turquoise}
+" let colorgroup['DiffChange']   = {"GUIBG": _l_sky}
+" let colorgroup['DiffText']     = {"GUIBG": _sky}
 let colorgroup['Function']     = {"GUIFG": _sky, "GUI": "bold"}
 let colorgroup['Label']        = {"GUIFG": _d_turquoise}
 let colorgroup['Module']       = {"GUIFG": _aubergine, "GUI": "underline"}
+let colorgroup['MoreMsg']      = {"GUIFG": _sky}
 let colorgroup['NonText']      = {"GUIFG": _gray_dark}
 let colorgroup['String']       = {"GUIFG": _turquoise}
 let colorgroup['Structure']    = {"GUIFG": _gray}
@@ -230,7 +237,7 @@ hi link javascriptEndcolons   Character
 " Javascript (pangloss/vim-javascript)
 hi link jsArrowFuncArgs       Identifier
 hi link jsArrowFunction       Character
-hi link jsBraces              PreProc
+hi link jsBraces              Delimiter
 hi link jsBrackets            Delimiter
 hi link jsClassBraces         PreProc
 hi link jsClassDefinition     Class
@@ -261,6 +268,7 @@ hi link jsReturn              Identifier
 hi link jsSpreadOperator      Character
 hi link jsSwitchBraces        Delimiter
 hi link jsThis                Identifier
+hi link jsTryCatchBraces      Delimiter
 
 " JSX
 hi link jsxTagName            htmlTagName
