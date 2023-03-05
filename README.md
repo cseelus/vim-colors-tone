@@ -54,3 +54,6 @@ You can use a plugin like [CSApprox](http://www.vim.org/scripts/script.php?scrip
 
 ![](https://user-images.githubusercontent.com/24765272/112864121-1e4c5c80-90ea-11eb-8ccf-247eceb8de27.jpeg)  
 *Screenshot by [@nyngwang](https://github.com/nyngwang)*
+
+![](https://user-images.githubusercontent.com/24765272/222935509-b6a63c83-12c8-4317-9c22-3340d0b3556f.png)  
+*Screenshot by [@nyngwang](https://github.com/nyngwang)*
